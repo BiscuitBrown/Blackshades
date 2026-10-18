@@ -400,10 +400,7 @@ public class Person {
 				alSourcePlay(gSourceID[BODYHITSOUND]);
 				bleeding=1;
 				bleeddelay=1;
-				//OJO
-				//bjoint1=skeleton.joints[skeleton.jointlabels[HEAD]];
 				bjoint1.set(skeleton.joints[skeleton.jointlabels[HEAD]]);
-				//bjoint2=skeleton.joints[skeleton.jointlabels[NECK]];
 				bjoint2.set(skeleton.joints[skeleton.jointlabels[NECK]]);
 			}
 			targetframe=currentframe;
