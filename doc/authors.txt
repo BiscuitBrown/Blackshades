@@ -1,0 +1,27 @@
+# Black Shades authors
+# ======================================================================
+# This is a list of all people who have contributed to Black Shades,
+#
+# Legend:
+#   N = Name and/or alias
+#   E = E-mail
+#   W = Website
+#   D = Description
+
+N: David Rosen
+D: The game creator
+
+N: Toby Haynes
+D: Bug fixing
+
+N: John Graham
+D: Main menu music
+
+N: Carlos Camacho
+D: Inspired music
+
+N: David Drew
+D: Moddeling guns assault rifle, sniper rifle, handgun, shotgun and grenade.
+
+N: Renan Falcao Gomes
+D: Java port creator.
