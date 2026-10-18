@@ -669,8 +669,7 @@ public class Quaternions {
 	   float d;
 	   float a1,a2,a3;
 	   float total,denom,mu;
-	   //XYZ n = new XYZ(),pa1,pa2,pa3;
-	   
+		
 	   if(this.n2 == null)this.n2 = new XYZ();
 	   else this.n2.set(0);
 
@@ -703,8 +702,6 @@ public class Quaternions {
 			a1,a2,a3,
 			total,denom,mu;
 				
-	//public static XYZ pa1,pa2,pa3,n;
-
 	public static float lineFacetd(XYZ p1,XYZ p2,XYZ pa,XYZ pb,XYZ pc,XYZ p) {
 
 	   //Calculate the parameters for the plane 
@@ -804,10 +801,6 @@ public class Quaternions {
 		else newpoint.set(0);
 		
 		XYZ thenewPoint = new XYZ(thePoint);
-		
-		// float x, float y, float z
-		
-		//XYZ thePointNew = new XYZ(thePoint);
 		
 		if(xang != 0) {
 			xang*=6.283185;
