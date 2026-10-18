@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project blackshades with libraries in sub-folder">
+    <!--ANT 1.7 is required-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}"/>
+    <property name="dir.jarfile" value="${dir.buildfile}/build"/>
+
+    <path id="classpath">
+        <fileset dir="${dir.workspace}/lwjgl-3.3.4/jar" includes="**/*.jar"/>
+    </path>
+
+    <target name="init" >
+        <mkdir dir="${dir.workspace}/build" />
+        <mkdir dir="${dir.workspace}/bin" />
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${dir.workspace}/src" destdir="${dir.workspace}/bin" classpathref="classpath"/>
+    </target>
+
+    <target name="create_run_jar" depends="compile">
+
+        <copy todir="${dir.workspace}/bin/Data">
+            <fileset dir="${dir.workspace}/src/Data" includes="**" />
+        </copy>
+
+        <jar destfile="${dir.jarfile}/Blackshades.jar">
+            <manifest>
+                <attribute name="Main-Class" value="blackshades.Main"/>
+                <attribute name="Class-Path" value=". lib/jar/lwjgl-opengl.jar lib/jar/lwjgl-openal.jar lib/jar/lwjgl-stb.jar lib/jar/lwjgl.jar lib/jar/lwjgl-glfw.jar"/>
+            </manifest>
+            <fileset dir="${dir.workspace}/bin"/>
+        </jar>
+
+        <mkdir dir="${dir.jarfile}/lib"/>
+        <copy file="${dir.buildfile}/Unix.sh" todir="${dir.jarfile}"/>
+        <copy file="${dir.buildfile}/Windows.bat" todir="${dir.jarfile}"/>
+
+        <copy todir="${dir.jarfile}/lib">
+            <fileset dir="${dir.buildfile}/lwjgl-3.3.4" includes="**" />
+        </copy>
+
+    </target>
+</project>
